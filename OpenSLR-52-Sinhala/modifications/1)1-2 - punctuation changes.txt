@@ -1,0 +1,21 @@
+file 1 - 185293 sentences
+file 2 - 185293 sentences
+
+removed - . " ? ! ' , / ~ : ;
+replaced - & -> and
+
+utterance_id	speaker_id	old_utterance			new-utternace
+
+58bc9e56c6	574a5		live@8				liveat8
+
+6a37de4692	3a747		මෙම වසරේ 15%ක් හා පසුගිය		මෙම වසරේ සීයට පහළවක් හා පසුගිය
+6b55811735	0bd84		මෙම වසරේ 15%ක් හා පසුගිය		මෙම වසරේ සීයට පහළවක් හා පසුගිය
+8aa64a404c	7d7d0		මෙම වසරේ 15%ක් හා පසුගිය		මෙම වසරේ සීයට පහළවක් හා පසුගිය
+7f134e21de	409ee		ඔහුන් 60% මිල අඩුකිරීමක් ලබා දෙනවා	ඔහුන් සීයට හැටක මිල අඩුකිරීමක් ලබා දෙනවා
+
+dc803d0a0a	96564		sinhala movies 18+		sinhala movies 18 plus
+52259ce25c	81570		flower+girls+frock		flower plus girls plus frock
+6ed2578ea8	466d8		google+				google plus
+
+convert to csv
+added headings

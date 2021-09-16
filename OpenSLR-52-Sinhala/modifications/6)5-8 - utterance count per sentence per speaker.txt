@@ -1,0 +1,3 @@
+got the utterance count (number of utterences) for a sentence for a particular speaker
+
+a=utt_spk_gender.groupby(['speaker_id','utterance']).count().drop("gender",axis=1)

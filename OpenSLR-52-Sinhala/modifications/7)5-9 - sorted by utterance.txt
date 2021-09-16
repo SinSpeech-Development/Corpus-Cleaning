@@ -1,0 +1,6 @@
+file 5 - 185293 sentences
+file 9 - 185293 sentences
+
+sorted file 5 by utterance in the ascending order
+
+a = utt_spk_gender.sort_values(by ='utterance')

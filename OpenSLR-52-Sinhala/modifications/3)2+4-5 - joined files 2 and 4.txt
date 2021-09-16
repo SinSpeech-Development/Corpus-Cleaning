@@ -1,0 +1,4 @@
+file 2 - 185293 sentences
+file 4 - 478 speakers
+
+joined files 2 and 4

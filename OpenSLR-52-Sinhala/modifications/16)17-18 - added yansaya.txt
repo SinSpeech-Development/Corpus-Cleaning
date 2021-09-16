@@ -1,0 +1,58 @@
+added yansaya
+
+\u0DBB - ර
+\u0DCA - ්
+\u0DBA - ය	
+\u200D - zero width joiner
+
+Step 1:
+find words with 'ර්ය > 0' and '්ය > 1' and manually replace them
+
+results = set()
+sentences["utterance"].str.split().apply(results.update)
+words = pd.DataFrame(results)
+words.rename(columns={0: 'Word'}, inplace=True)
+sorted_words = words.sort_values("Word")
+sorted_words.loc[(sorted_words['Word'].str.count("\u0DBB\u0DCA\u0DBA") > 0) & (sorted_words["Word"].str.count("\u0DCA\u0DBA") > 1)]
+
+found ආචර්ය්යය - replace with ආචාර්ය
+
+now the words have only 'ර්ය' or '්ය'
+
+Step 2:
+create a dictionary of words containing '්ය' with the word they should be replaced with
+
+results = set()
+sentences["utterance"].str.split().apply(results.update)
+words = pd.DataFrame(results)
+words.rename(columns={0: 'Word'}, inplace=True)
+sorted_words = words.sort_values("Word")
+words_with_්ය = sorted_words.loc[(sorted_words['Word'].str.count("\u0DCA\u0DBA") > 0)]
+# 1582 words
+
+keys = words_with_්ය["Word"]
+
+values=[]
+for i in keys:
+    if "\u0DBB\u0DCA\u0DBA" in i:
+        values.append(i)
+    else:
+        temp = i.replace("\u0DCA\u0DBA", "\u0DCA\u200D\u0DBA")
+        values.append(temp)
+
+new_dic = {}
+for key in keys:
+    for value in values:
+        new_dic[key] = value
+        values.remove(value)
+        break
+
+supplements/18_1 dictionary with words containing ්ය
+
+Step 3:
+replaced the words
+
+for i in range(0, len(sentences["utterance"])):
+    for key in new_dic:
+        if key in sentences["utterance"][i]:
+            sentences["utterance"][i] = sentences["utterance"][i].replace(key, new_dic[key])

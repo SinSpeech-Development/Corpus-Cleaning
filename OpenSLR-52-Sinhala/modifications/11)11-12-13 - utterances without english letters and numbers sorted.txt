@@ -1,0 +1,10 @@
+file 11 - 178428 sentences
+file 12 - 398 sentences
+file 13 - 178030 sentences
+
+deleted rows of file 12 (utterances containing numbers) from file 11 (utterances without english letters) and sorted by utterance
+
+withoutnumbers=utt_without_english_letters[~utt_without_english_letters.utterance.isin(eee.utterance)].sort_values('utterance')
+
+also removed,
+	unrecognized characters

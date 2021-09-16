@@ -1,0 +1,7 @@
+file 3 - 477 speakers
+file 4 - 478 speakers
+
+dropped utterance_id column
+
+added the remaining speaker
+3f5d5	m

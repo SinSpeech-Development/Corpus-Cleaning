@@ -1,0 +1,53 @@
+Step 1:
+find words containing yansaya and put them to a set
+
+results = set()
+sentences["utterance"].str.split().apply(results.update)
+words = pd.DataFrame(results)
+words.rename(columns={0: 'Word'}, inplace=True)
+sorted_words = words.sort_values("Word")
+words_containing_yansaya = sorted_words.loc[(sorted_words['Word'].str.count("\u0DCA\u200D\u0DBA") > 0)]
+
+supplements/19_1 words containing yansaya
+
+yansaya_words_set = set()
+words_containing_yansaya["Word"].str.split().apply(yansaya_words_set.update)
+
+Step 2:
+find total original words in '2_utt_spk_text_remove_punctuations.csv' and put them to a set
+
+total_words_set = set()
+sentences2["utterance"].str.split().apply(total_words_set.update)
+
+Step 3:
+find words in 'yansaya_words_set' but not in 'total_words_set'
+
+for i in yansaya_words_set:
+    if i not in total_words_set:
+        print (i)
+
+supplements/19_2 words not in original
+
+Step 4:
+update 'supplements/19_2 words not in original' with the correct word that should be replaced
+
+Step 5:
+replaced the words
+
+keys = list(sentences3["old"])
+values = list(sentences3["new"])
+new_dic = {}
+for key in keys:
+    for value in values:
+        new_dic[key] = value
+        values.remove(value)
+        break
+
+sentences = pd.read_csv("data/18_added_yansaya.csv")
+for i in range(0, len(sentences["utterance"])):
+    for key in new_dic:
+        if key in sentences["utterance"][i]:
+            sentences["utterance"][i] = sentences["utterance"][i].replace(key, new_dic[key])
+
+Step 6:
+manually replaced 'හය්‍ය' with 'හය්ය'

@@ -1,0 +1,8 @@
+file 5 - 185293 sentences
+file 10 - 6865 sentences
+
+got the utterances containing english letters sorted by utterance
+
+mylist = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+pattern = '|'.join(mylist)
+english=utt_spk_gender[utt_spk_gender['utterance'].str.contains(pattern)].sort_values('utterance')

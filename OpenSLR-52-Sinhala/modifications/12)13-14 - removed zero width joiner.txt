@@ -1,0 +1,6 @@
+file 13 - 178030 sentences
+file 14 - 178030 sentences
+
+removed zero width joiner
+
+sentences["utterance"] = sentences["utterance"].str.strip().str.replace("\u200D", "")

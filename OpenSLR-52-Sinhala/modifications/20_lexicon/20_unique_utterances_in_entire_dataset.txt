@@ -1,0 +1,2 @@
+sentences = pd.read_csv("data/20_corrected.csv")
+unique_utterances = sentences.groupby(["utterance"]).count().drop(["utterance_id","gender","speaker_id"], axis=1)

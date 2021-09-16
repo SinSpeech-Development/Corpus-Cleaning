@@ -1,0 +1,2 @@
+got the utterance count (number of utterances) by speaker_id in the ascending order
+	- in this count, if the same sentence is uttered by the speaker twice, it is considered as 2

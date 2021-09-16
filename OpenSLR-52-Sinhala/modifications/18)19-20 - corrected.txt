@@ -1,0 +1,18 @@
+manually removed – » µ
+
+replaced 
+    ෙඖෂධයක් -> ඖෂධයක්
+    ෙද්ම -> දේම
+    ෙනාහැකි -> නොහැකි
+    ෙමෟර්ය -> මෞර්ය
+    ෙව්වා -> වේවා
+    ෙසෙලයකම -> සෛලයකම
+
+   සිගරැුට් -> සිගරට්
+   ලොතරැුයි -> ලොතරැයි
+
+remove zero width space in 8 places - 200B
+    ex: in '​සෙල්ලම්'
+
+replaced ZERO WIDTH NON-JOINER - 200C with nothing
+    ex: in '‌දේවල්'

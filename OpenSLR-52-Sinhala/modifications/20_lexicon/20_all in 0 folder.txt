@@ -1,0 +1,2 @@
+sentences = pd.read_csv("data/20_corrected.csv")
+all_in_0 = sentences[sentences["utterance_id"].str.startswith("0")].sort_values("utterance_id")

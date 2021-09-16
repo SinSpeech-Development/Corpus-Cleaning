@@ -1,0 +1,11 @@
+file 5 - 185293 sentences
+file 10 - 6865 sentences
+file 11 - 178428 sentences
+
+deleted rows of file 10 (utterances containing english letters) from file 5 (total utterances) and sorted by utterance
+
+withoutenglish=utt_spk_gender[~utt_spk_gender.utterance.isin(eee.utterance)].sort_values('utterance')
+
+also removed,
+	starting and trailing whitespaces from utterances
+	‘ ’ “ ” ෴

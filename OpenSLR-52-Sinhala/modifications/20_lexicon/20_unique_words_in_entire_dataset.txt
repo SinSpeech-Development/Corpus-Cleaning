@@ -1,0 +1,6 @@
+sentences = pd.read_csv("data/20_corrected.csv")
+results = set()
+sentences["utterance"].str.strip().str.split().apply(results.update)
+words = pd.DataFrame(results)
+words.rename(columns={0: 'Word'}, inplace=True)
+sorted_words = words.sort_values("Word")

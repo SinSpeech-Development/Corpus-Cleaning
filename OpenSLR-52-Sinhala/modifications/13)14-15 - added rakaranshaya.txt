@@ -1,0 +1,9 @@
+added rakaranshaya
+
+\u0DCA - ්
+\u0DBB - ර
+\u200D - zero width joiner
+
+sentences["utterance"] = sentences["utterance"].str.replace("\u0DCA\u0DBB", "\u0DCA\u200D\u0DBB")
+
+
