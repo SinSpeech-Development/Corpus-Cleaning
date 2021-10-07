@@ -1,0 +1,8 @@
+no punctuations
+no zero width space
+no zero width non joiner
+
+removed zero width joiner
+sentences["utterance"] = sentences["utterance"].str.strip().str.replace("\u200D", "")
+
+ex: ‍අලුයම
